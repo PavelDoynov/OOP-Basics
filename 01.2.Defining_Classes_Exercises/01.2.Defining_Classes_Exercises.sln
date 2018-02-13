@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Define_a_Class_Person", "01.Define_a_Class_Person\01.Define_a_Class_Person.csproj", "{8CE1D13C-3D35-4BE8-A5D4-BE6685E2FB02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Creating_Constructors", "02.Creating_Constructors\02.Creating_Constructors.csproj", "{4BC7952E-1D09-4C2F-B121-73A6718663D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Oldest_Family_Member", "03.Oldest_Family_Member\03.Oldest_Family_Member.csproj", "{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CE1D13C-3D35-4BE8-A5D4-BE6685E2FB02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE1D13C-3D35-4BE8-A5D4-BE6685E2FB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE1D13C-3D35-4BE8-A5D4-BE6685E2FB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE1D13C-3D35-4BE8-A5D4-BE6685E2FB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC7952E-1D09-4C2F-B121-73A6718663D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC7952E-1D09-4C2F-B121-73A6718663D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC7952E-1D09-4C2F-B121-73A6718663D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC7952E-1D09-4C2F-B121-73A6718663D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
