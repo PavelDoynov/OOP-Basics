@@ -20,15 +20,13 @@
 
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 class Program
 {
     static void Main()
     {
-        List<Person> data = new List<Person>();
-
+        Family family = new Family();
         int returns = int.Parse(Console.ReadLine());
 
         while (returns != 0)
@@ -41,17 +39,11 @@ class Program
             currentPerson.Name = input[0];
             currentPerson.Age = int.Parse(input[1]);
 
-            data.Add(currentPerson);
+            family.AddPerson = currentPerson ;
 
             returns --;
         }
 
-        GetOldestPerson(data);
-    }
-
-    private static void GetOldestPerson(List<Person> data)
-    {
-        data = data.OrderByDescending(x => x.Age).ToList();
-        Console.WriteLine($"{data[0]}");
+        Console.WriteLine(family);
     }
 }

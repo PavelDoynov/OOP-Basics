@@ -32,9 +32,4 @@ public class Person
         get { return name; }
         set { name = value; }
     }
-
-    public override string ToString()
-    {
-        return $"{this.Name} {this.Age}";
-    }
 }
