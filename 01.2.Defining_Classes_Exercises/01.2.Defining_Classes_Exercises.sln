@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Creating_Constructors", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Oldest_Family_Member", "03.Oldest_Family_Member\03.Oldest_Family_Member.csproj", "{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.Company_Roster", "06.Company_Roster\06.Company_Roster.csproj", "{A394CCDF-5EA7-47C0-B334-C1A225AE0BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Opinion_Poll", "04.Opinion_Poll\04.Opinion_Poll.csproj", "{B9B56EE3-193F-4125-971A-5A33908B4489}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +29,13 @@ Global
 		{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1C0B7CD-4C09-42FE-A72F-BA7E3FE278D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A394CCDF-5EA7-47C0-B334-C1A225AE0BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A394CCDF-5EA7-47C0-B334-C1A225AE0BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A394CCDF-5EA7-47C0-B334-C1A225AE0BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A394CCDF-5EA7-47C0-B334-C1A225AE0BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B56EE3-193F-4125-971A-5A33908B4489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B56EE3-193F-4125-971A-5A33908B4489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B56EE3-193F-4125-971A-5A33908B4489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B56EE3-193F-4125-971A-5A33908B4489}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
