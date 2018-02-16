@@ -54,16 +54,13 @@ class Program
 
             Pokemon currentPokemon = new Pokemon(args[1], args[2], int.Parse(args[3]));
 
-            if (data.Select(x => x.Name).ToList().Contains(args[0])) 
+            if (data.Select(x => x.name).ToList().Contains(args[0])) 
             {
-                data.Where(x => x.Name == args[0]).Select(x => x.Pokemon = currentPokemon).ToList();
+                data.Where(x => x.name == args[0]).Select(x => x.Pokemon = currentPokemon).ToList();
             }
             else
             {
-                Trainer currentTrainer = new Trainer();
-                currentTrainer.Name = args[0];
-                currentTrainer.Pokemon = currentPokemon;
-                data.Add(currentTrainer);
+                data.Add(new Trainer(args[0], currentPokemon));
             }
 
         }
@@ -77,9 +74,9 @@ class Program
             }
         }
 
-        foreach (var trainer in data.OrderByDescending(x => x.Badges))
+        foreach (var trainer in data.OrderByDescending(x => x.badges))
         {
-            Console.WriteLine($"{trainer.Name} {trainer.Badges} {trainer.PokemonList.Count()}");
+            Console.WriteLine($"{trainer.name} {trainer.badges} {trainer.pokemon.Count()}");
         }
     }
 }
