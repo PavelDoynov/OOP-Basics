@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Define_an_Interface_IPerson", "01.Define_an_Interface_IPerson\01.Define_an_Interface_IPerson.csproj", "{9C5A01F6-F613-4F51-828A-C98C8BF69430}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Multiple_Implementation", "02.Multiple_Implementation\02.Multiple_Implementation.csproj", "{93CE5620-248B-4E79-B895-B768EBDBC95E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Ferrari", "03.Ferrari\03.Ferrari.csproj", "{A51F44D1-CB1F-41CF-940A-BB464760CC61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C5A01F6-F613-4F51-828A-C98C8BF69430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5A01F6-F613-4F51-828A-C98C8BF69430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5A01F6-F613-4F51-828A-C98C8BF69430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5A01F6-F613-4F51-828A-C98C8BF69430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93CE5620-248B-4E79-B895-B768EBDBC95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93CE5620-248B-4E79-B895-B768EBDBC95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93CE5620-248B-4E79-B895-B768EBDBC95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93CE5620-248B-4E79-B895-B768EBDBC95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A51F44D1-CB1F-41CF-940A-BB464760CC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51F44D1-CB1F-41CF-940A-BB464760CC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51F44D1-CB1F-41CF-940A-BB464760CC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51F44D1-CB1F-41CF-940A-BB464760CC61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
