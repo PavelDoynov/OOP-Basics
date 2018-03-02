@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Multiple_Implementation"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Ferrari", "03.Ferrari\03.Ferrari.csproj", "{A51F44D1-CB1F-41CF-940A-BB464760CC61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Telephony", "04.Telephony\04.Telephony.csproj", "{49C55AB3-C8ED-42C2-AD32-4CEF771A2366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.Border_Control", "05.Border_Control\05.Border_Control.csproj", "{B03AEBB9-87FE-4E8E-839A-E39F172ECF87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +29,13 @@ Global
 		{A51F44D1-CB1F-41CF-940A-BB464760CC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A51F44D1-CB1F-41CF-940A-BB464760CC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A51F44D1-CB1F-41CF-940A-BB464760CC61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49C55AB3-C8ED-42C2-AD32-4CEF771A2366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C55AB3-C8ED-42C2-AD32-4CEF771A2366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C55AB3-C8ED-42C2-AD32-4CEF771A2366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C55AB3-C8ED-42C2-AD32-4CEF771A2366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03AEBB9-87FE-4E8E-839A-E39F172ECF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03AEBB9-87FE-4E8E-839A-E39F172ECF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03AEBB9-87FE-4E8E-839A-E39F172ECF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03AEBB9-87FE-4E8E-839A-E39F172ECF87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
