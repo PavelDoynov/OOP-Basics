@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Classes\Driver.cs" />
+    <Compile Remove="Interfaces\IDriver.cs" />
+    <Compile Remove="Interfaces\ICar.cs" />
+    <Compile Remove="Interfaces\ITyre.cs" />
+    <Compile Remove="Classes\Tyres.cs" />
+    <Compile Remove="Classes\Car.cs" />
+    <Compile Remove="Classes\Driver\AggressiveDriver.cs" />
+  </ItemGroup>
+</Project>

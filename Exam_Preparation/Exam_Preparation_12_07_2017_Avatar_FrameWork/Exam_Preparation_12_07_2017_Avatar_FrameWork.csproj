@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6FC40594-9281-4C14-AA3F-227E7A9C4A64}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Exam_Preparation_12_07_2017_Avatar_FrameWork</RootNamespace>
+    <AssemblyName>Exam_Preparation_12_07_2017_Avatar_FrameWork</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Avatar_StartUp.cs" />
+    <Compile Include="Entity\Benders\AirBender.cs" />
+    <Compile Include="Entity\Benders\Bender.cs" />
+    <Compile Include="Entity\Benders\EarthBender.cs" />
+    <Compile Include="Entity\Benders\FireBender.cs" />
+    <Compile Include="Entity\Benders\WaterBender.cs" />
+    <Compile Include="Entity\Monuments\AirMonument.cs" />
+    <Compile Include="Entity\Monuments\EarthMonument.cs" />
+    <Compile Include="Entity\Monuments\FireMonument.cs" />
+    <Compile Include="Entity\Monuments\Monument.cs" />
+    <Compile Include="Entity\Monuments\WaterMonument.cs" />
+    <Compile Include="Core\NationsBuilder.cs" />
+    <Compile Include="Entity\Nation.cs" />
+    <Compile Include="Core\Engine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

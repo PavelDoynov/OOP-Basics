@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam_05_09_2017_GrandPrix", "Exam_05_09_2017_GrandPrix\Exam_05_09_2017_GrandPrix.csproj", "{9CC96E1F-03A5-4BC3-ACC9-42E89345EA0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam_Preparation_12_07_2017_Avatar_FrameWork", "Exam_Preparation_12_07_2017_Avatar_FrameWork\Exam_Preparation_12_07_2017_Avatar_FrameWork.csproj", "{6FC40594-9281-4C14-AA3F-227E7A9C4A64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CC96E1F-03A5-4BC3-ACC9-42E89345EA0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC96E1F-03A5-4BC3-ACC9-42E89345EA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC96E1F-03A5-4BC3-ACC9-42E89345EA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC96E1F-03A5-4BC3-ACC9-42E89345EA0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC40594-9281-4C14-AA3F-227E7A9C4A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC40594-9281-4C14-AA3F-227E7A9C4A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC40594-9281-4C14-AA3F-227E7A9C4A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC40594-9281-4C14-AA3F-227E7A9C4A64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
