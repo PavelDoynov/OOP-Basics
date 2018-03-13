@@ -12,7 +12,7 @@ public class Validation
 
     public static void ValidateDegradationValueTyre (double currentDeggradation)
     {
-        if (currentDeggradation <= 0)
+        if (currentDeggradation < 0)
         {
             throw new ArgumentException("Blown Tyre");
         }
