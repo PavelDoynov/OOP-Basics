@@ -11,7 +11,13 @@
     <Compile Remove="Interfaces\ICar.cs" />
     <Compile Remove="Interfaces\ITyre.cs" />
     <Compile Remove="Classes\Tyres.cs" />
-    <Compile Remove="Classes\Car.cs" />
     <Compile Remove="Classes\Driver\AggressiveDriver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Classes\Tyres\" />
+    <Folder Include="Classes\Drivers\" />
+    <Folder Include="Core\" />
+    <Folder Include="Factory\" />
   </ItemGroup>
 </Project>
