@@ -11,13 +11,13 @@ public class RaceTower
     List<Driver> drivers;
     int currentLaps;
     int lapsNumber;
-    Dictionary<Driver, string> problemDrivers;  
+    Dictionary<string, string> problemDrivers;  
 
     public RaceTower()
     {
         this.drivers = new List<Driver>();
         this.currentLaps = 0;
-        this.problemDrivers = new Dictionary<Driver, string>();
+        this.problemDrivers = new Dictionary<string, string>();
         this.Weather = "Sunny";
     }
 
@@ -74,7 +74,7 @@ public class RaceTower
         StringBuilder result = new StringBuilder();
         int completeLaps = int.Parse(commandArgs[0]);
 
-        if (completeLaps > this.LapsNumber - this.currentLaps)
+        if (completeLaps > this.LapsNumber - this.currentLaps || completeLaps < 0)
         {
             result.Append($"There is no time! On lap {this.currentLaps}.");
         }
@@ -84,10 +84,10 @@ public class RaceTower
             {
                 RecalculateDriverStats();
                 this.currentLaps++;
-                result.Append(CheckForOvertaking(this.currentLaps).Trim());
+                result.Append(CheckForOvertaking().Trim());
             }
         }
-        return result.ToString(); 
+        return result.ToString().Trim(); 
     }
 
     public string GetLeaderboard()
@@ -99,16 +99,14 @@ public class RaceTower
 
         foreach (Driver driver in drivers.OrderBy(d => d.TotalTime))
         {
-            result.Append(Environment.NewLine + $"{place} {driver.Name} {driver.TotalTime:f3}");
-            place++;
+            result.Append(Environment.NewLine + $"{place++} {driver.Name} {driver.TotalTime:f3}");
         }
 
         if (problemDrivers.Count != 0) 
         {
             foreach (var driver in problemDrivers.Reverse())
             {
-                result.Append(Environment.NewLine + $"{place} {driver.Key.Name} {driver.Value}");
-                place++;
+                result.Append(Environment.NewLine + $"{place++} {driver.Key} {driver.Value}");
             }
         }
 
@@ -147,7 +145,7 @@ public class RaceTower
             catch (Exception ex)
             {
                 indexOfProblemDrivers.Add(i);
-                this.problemDrivers[drivers[i]] = ex.Message;
+                this.problemDrivers[drivers[i].Name] = ex.Message;
             }
         }
 
@@ -167,60 +165,57 @@ public class RaceTower
         return winner;
     }
 
-    private string CheckForOvertaking(int lap)
+    private string CheckForOvertaking()
     {
         StringBuilder result = new StringBuilder();
 
-        List<Driver> currentDrivers = this.drivers.OrderByDescending(d => d.TotalTime).ToList();
+        this.drivers = this.drivers.OrderByDescending(d => d.TotalTime).ToList();
         List<int> indexOfCrashedDrivers = new List<int>();
 
-        for (int i = 0; i < currentDrivers.Count - 1; i ++)
+        for (int i = 0; i < this.drivers.Count - 1; i ++)
         {
-            double timeDifferenceBetweenDrivers = currentDrivers[i + 1].TotalTime - currentDrivers[i].TotalTime;
-            string typeOfParam = GetType(currentDrivers[i]);
+            double timeDifferenceBetweenDrivers = Math.Abs(this.drivers[i + 1].TotalTime - this.drivers[i].TotalTime);
+            string typeOfParam = GetType(this.drivers[i]);
 
             if (this.Weather == "Foggy" && typeOfParam == AGGRESSIVE_DRIVER 
-                && timeDifferenceBetweenDrivers <= 3 && timeDifferenceBetweenDrivers >= 0)
+                && timeDifferenceBetweenDrivers <= 3)
             {
                 indexOfCrashedDrivers.Add(i);
-                this.problemDrivers[currentDrivers[i]] = "Crashed";
+                this.problemDrivers[this.drivers[i].Name] = "Crashed";
             }
             else if (this.Weather == "Rainy" && typeOfParam == ENDURANCE_DRIVER 
-                     && timeDifferenceBetweenDrivers <= 3 && timeDifferenceBetweenDrivers >= 0)
+                     && timeDifferenceBetweenDrivers <= 3)
             {
                 indexOfCrashedDrivers.Add(i);
-                this.problemDrivers[currentDrivers[i]] = "Crashed";
+                this.problemDrivers[this.drivers[i].Name] = "Crashed";
             }
-            else if (this.Weather == "Sunny" && typeOfParam == ENDURANCE_DRIVER
-                     && timeDifferenceBetweenDrivers <= 3 && timeDifferenceBetweenDrivers >= 0
-                     || this.Weather == "Sunny" && typeOfParam == AGGRESSIVE_DRIVER
-                     && timeDifferenceBetweenDrivers <= 3 && timeDifferenceBetweenDrivers >= 0)
+            else if (typeOfParam == ENDURANCE_DRIVER && timeDifferenceBetweenDrivers <= 3 
+                     || typeOfParam == AGGRESSIVE_DRIVER && timeDifferenceBetweenDrivers <= 3)
             {
-                currentDrivers[i].ReduceTime(3);
-                currentDrivers[i + 1].IncreaseTime(3);
+                this.drivers[i].ReduceTime(3);
+                this.drivers[i + 1].IncreaseTime(3);
 
-                result.Append($"{currentDrivers[i].Name} has overtaken {currentDrivers[i + 1].Name} " +
-                              $"on lap {lap}." + Environment.NewLine);
+                result.Append($"{this.drivers[i].Name} has overtaken {this.drivers[i + 1].Name} " +
+                              $"on lap {this.currentLaps}." + Environment.NewLine);
             }
-            else if (timeDifferenceBetweenDrivers >= 0 && timeDifferenceBetweenDrivers <= 2)
+            else if (timeDifferenceBetweenDrivers <= 2)
             {
-                currentDrivers[i].ReduceTime(2);
-                currentDrivers[i + 1].IncreaseTime(2);
+                this.drivers[i].ReduceTime(2);
+                this.drivers[i + 1].IncreaseTime(2);
 
-                result.Append($"{currentDrivers[i].Name} has overtaken {currentDrivers[i + 1].Name} " +
-                              $"on lap {lap}." + Environment.NewLine);
+                result.Append($"{this.drivers[i].Name} has overtaken {this.drivers[i + 1].Name} " +
+                              $"on lap {this.currentLaps}." + Environment.NewLine);
             }
         }
 
+        indexOfCrashedDrivers = indexOfCrashedDrivers.OrderByDescending(x => x).ToList();
         if (indexOfCrashedDrivers.Count != 0)
         {
-            for (int x = 0; x < indexOfCrashedDrivers.Count; x++)
+            for (int i = 0; i < indexOfCrashedDrivers.Count; i++)
             {
-                currentDrivers.RemoveAt(indexOfCrashedDrivers[x]);
+                this.drivers.RemoveAt(indexOfCrashedDrivers[i]);
             }
         }
-
-        this.drivers = currentDrivers;
 
         return result.ToString();
     }
