@@ -10,6 +10,7 @@ public class RaceTower
 
     List<Driver> drivers;
     int currentLaps;
+    int lapsNumber;
     Dictionary<Driver, string> problemDrivers;  
 
     public RaceTower()
@@ -20,7 +21,15 @@ public class RaceTower
         this.Weather = "Sunny";
     }
 
-    public int LapsNumber { get; private set; }
+    public int LapsNumber 
+    { 
+        get { return this.lapsNumber; }
+        private set
+        {
+            Validation.ValidateLapsNumber(value, this.currentLaps);
+            this.lapsNumber = value;
+        }
+    }
     public int TrackLength { get; private set; }
     public string Weather { get; private set; }
 
@@ -71,12 +80,11 @@ public class RaceTower
         }
         else
         {
-            while (completeLaps != 0)
+            for (int i = 0; i < completeLaps; i++)
             {
-                this.currentLaps++;
                 RecalculateDriverStats();
-                result.Append(CheckForOvertaking(this.currentLaps));
-                completeLaps--;
+                this.currentLaps++;
+                result.Append(CheckForOvertaking(this.currentLaps).Trim());
             }
         }
         return result.ToString(); 
@@ -183,13 +191,24 @@ public class RaceTower
                 indexOfCrashedDrivers.Add(i);
                 this.problemDrivers[currentDrivers[i]] = "Crashed";
             }
-            else if (timeDifferenceBetweenDrivers >= 0 && timeDifferenceBetweenDrivers <= 2)
+            else if (this.Weather == "Sunny" && typeOfParam == ENDURANCE_DRIVER
+                     && timeDifferenceBetweenDrivers <= 3 && timeDifferenceBetweenDrivers >= 0
+                     || this.Weather == "Sunny" && typeOfParam == AGGRESSIVE_DRIVER
+                     && timeDifferenceBetweenDrivers <= 3 && timeDifferenceBetweenDrivers >= 0)
             {
-                currentDrivers[i].ReduceTime();
-                currentDrivers[i + 1].IncreaseTime();
+                currentDrivers[i].ReduceTime(3);
+                currentDrivers[i + 1].IncreaseTime(3);
 
                 result.Append($"{currentDrivers[i].Name} has overtaken {currentDrivers[i + 1].Name} " +
-                              $"on lap {lap}.");
+                              $"on lap {lap}." + Environment.NewLine);
+            }
+            else if (timeDifferenceBetweenDrivers >= 0 && timeDifferenceBetweenDrivers <= 2)
+            {
+                currentDrivers[i].ReduceTime(2);
+                currentDrivers[i + 1].IncreaseTime(2);
+
+                result.Append($"{currentDrivers[i].Name} has overtaken {currentDrivers[i + 1].Name} " +
+                              $"on lap {lap}." + Environment.NewLine);
             }
         }
 

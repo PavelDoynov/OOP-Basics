@@ -31,13 +31,13 @@ public abstract class Driver
         this.TotalTime += 20;
     }
 
-    public void ReduceTime()
+    public void ReduceTime(int changeTime)
     {
-        this.TotalTime -= 2;
+        this.TotalTime -= changeTime;
     }
 
-    public void IncreaseTime()
+    public void IncreaseTime(int changeTime)
     {
-        this.TotalTime += 2;
+        this.TotalTime += changeTime;
     }
 }

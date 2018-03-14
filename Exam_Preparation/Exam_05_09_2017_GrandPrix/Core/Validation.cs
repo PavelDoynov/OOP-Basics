@@ -34,5 +34,11 @@ public class Validation
         }
     }
 
-
+    public static void ValidateLapsNumber (int laps, int currentLap)
+    {
+        if (laps < 0)
+        {
+            throw new ArgumentException($"There is no time! On lap {currentLap}.");
+        }
+    }
 }
