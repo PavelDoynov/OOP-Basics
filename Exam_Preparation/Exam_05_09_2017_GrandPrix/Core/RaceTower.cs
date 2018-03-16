@@ -84,7 +84,7 @@ public class RaceTower
             {
                 RecalculateDriverStats();
                 this.currentLaps++;
-                result.Append(CheckForOvertaking().Trim());
+                CheckForOvertaking(result);
             }
         }
         return result.ToString().Trim(); 
@@ -132,8 +132,6 @@ public class RaceTower
 
     private void RecalculateDriverStats() 
     {
-        List<int> indexOfProblemDrivers = new List<int>();
-
         for (int i = 0; i < this.drivers.Count; i++)
         {
             this.drivers[i].RecalculateTime(this.TrackLength);
@@ -144,17 +142,9 @@ public class RaceTower
             }
             catch (Exception ex)
             {
-                indexOfProblemDrivers.Add(i);
                 this.problemDrivers[drivers[i].Name] = ex.Message;
-            }
-        }
-
-        indexOfProblemDrivers = indexOfProblemDrivers.OrderByDescending(x => x).ToList();
-        if (indexOfProblemDrivers.Count != 0)
-        {
-            for (int i = 0; i < indexOfProblemDrivers.Count; i++)
-            {
-                this.drivers.RemoveAt(indexOfProblemDrivers[i]);
+                this.drivers.RemoveAt(i);
+                i--;
             }
         }
     }
@@ -165,12 +155,9 @@ public class RaceTower
         return winner;
     }
 
-    private string CheckForOvertaking()
+    private void CheckForOvertaking(StringBuilder result)
     {
-        StringBuilder result = new StringBuilder();
-
         this.drivers = this.drivers.OrderByDescending(d => d.TotalTime).ToList();
-        List<int> indexOfCrashedDrivers = new List<int>();
 
         for (int i = 0; i < this.drivers.Count - 1; i ++)
         {
@@ -180,14 +167,16 @@ public class RaceTower
             if (this.Weather == "Foggy" && typeOfParam == AGGRESSIVE_DRIVER 
                 && timeDifferenceBetweenDrivers <= 3)
             {
-                indexOfCrashedDrivers.Add(i);
                 this.problemDrivers[this.drivers[i].Name] = "Crashed";
+                this.drivers.RemoveAt(i);
+                i--;
             }
             else if (this.Weather == "Rainy" && typeOfParam == ENDURANCE_DRIVER 
                      && timeDifferenceBetweenDrivers <= 3)
             {
-                indexOfCrashedDrivers.Add(i);
                 this.problemDrivers[this.drivers[i].Name] = "Crashed";
+                this.drivers.RemoveAt(i);
+                i--;
             }
             else if (typeOfParam == ENDURANCE_DRIVER && timeDifferenceBetweenDrivers <= 3 
                      || typeOfParam == AGGRESSIVE_DRIVER && timeDifferenceBetweenDrivers <= 3)
@@ -207,17 +196,6 @@ public class RaceTower
                               $"on lap {this.currentLaps}." + Environment.NewLine);
             }
         }
-
-        indexOfCrashedDrivers = indexOfCrashedDrivers.OrderByDescending(x => x).ToList();
-        if (indexOfCrashedDrivers.Count != 0)
-        {
-            for (int i = 0; i < indexOfCrashedDrivers.Count; i++)
-            {
-                this.drivers.RemoveAt(indexOfCrashedDrivers[i]);
-            }
-        }
-
-        return result.ToString();
     }
 
     private string GetType(Driver driver)

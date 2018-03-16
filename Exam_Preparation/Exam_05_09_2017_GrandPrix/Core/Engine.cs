@@ -62,7 +62,7 @@ public class Engine
                 if (!start)
                 {
                     Driver winner = currentRace.GetWinner();
-                    Console.WriteLine($"{winner.Name} wins the race for {winner.TotalTime:f3} seconds.".Trim());
+                    Console.WriteLine($"{winner.Name} wins the race for {winner.TotalTime:f3} seconds.");
                 }
             }
             else if (command == "Box")

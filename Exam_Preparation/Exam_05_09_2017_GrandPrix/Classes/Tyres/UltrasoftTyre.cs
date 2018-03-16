@@ -19,7 +19,7 @@ public class UltrasoftTyre : Tyre
         }
     }
 
-    public override string Name => "UtrasoftTyre";
+    public override string Name => "Utrasoft";
 
     public override double Degradation 
     { 
