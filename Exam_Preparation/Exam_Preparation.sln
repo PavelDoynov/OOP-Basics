@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam_05_09_2017_GrandPrix",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam_Preparation_12_07_2017_Avatar_FrameWork", "Exam_Preparation_12_07_2017_Avatar_FrameWork\Exam_Preparation_12_07_2017_Avatar_FrameWork.csproj", "{6FC40594-9281-4C14-AA3F-227E7A9C4A64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam_Preparation_11_07_2018_Need_For_Speed_FrameWork", "Exam_Preparation_11_07_2018_Need_For_Speed_FrameWork\Exam_Preparation_11_07_2018_Need_For_Speed_FrameWork.csproj", "{723BF36E-AF96-4DF3-8712-BBD110EB822C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{6FC40594-9281-4C14-AA3F-227E7A9C4A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FC40594-9281-4C14-AA3F-227E7A9C4A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FC40594-9281-4C14-AA3F-227E7A9C4A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723BF36E-AF96-4DF3-8712-BBD110EB822C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723BF36E-AF96-4DF3-8712-BBD110EB822C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723BF36E-AF96-4DF3-8712-BBD110EB822C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723BF36E-AF96-4DF3-8712-BBD110EB822C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{723BF36E-AF96-4DF3-8712-BBD110EB822C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Exam_Preparation_11_07_2018_Need_For_Speed_FrameWork</RootNamespace>
+    <AssemblyName>Exam_Preparation_11_07_2018_Need_For_Speed_FrameWork</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NeedForSpeed_StartUp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Car\Car.cs" />
+    <Compile Include="Classes\Car\PerformanceCar.cs" />
+    <Compile Include="Classes\Car\ShowCar.cs" />
+    <Compile Include="Classes\Race\Race.cs" />
+    <Compile Include="Classes\Race\CasualRace.cs" />
+    <Compile Include="Classes\Race\DragRace.cs" />
+    <Compile Include="Classes\Race\DriftRace.cs" />
+    <Compile Include="Classes\Garage.cs" />
+    <Compile Include="Core\CarManager.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Factories\CarFactory.cs" />
+    <Compile Include="Factories\RaceFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Classes\Car\" />
+    <Folder Include="Classes\Race\" />
+    <Folder Include="Core\" />
+    <Folder Include="Factories\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
